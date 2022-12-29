@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Quintessential&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sløyfe</title>
+  </head>
+  <body>
+    <header>
+      <section id="font-size">
+        Font size
+        <button class="decrease">-</button>
+        <button class="increase">+</button>
+        <span class="size">00px</span>
+      </section>
+      <section id="line-height">
+        Line height
+        <button class="decrease">-</button>
+        <button class="increase">+</button>
+        <span class="size">00px</span>
+      </section>
+    </header>
+    <main id="section-to-print">
+      <div class="spacer"></div>
+      <div class="left">En</div>
+      <div class="left">siste</div>
+      <div class="left">hilsen</div>
+      <div class="spacer"></div>
+    </main>
+    <script async defer src="script.js"></script>
+  </body>
+</html>
+
+<style>
+  body {
+    background-color: grey;
+  }
+
+  main {
+    background-color: white;
+    width: calc(488px - 8rem);
+    padding-left: 4rem;
+    padding-right: 4rem;
+
+    font-family: "Petit Formal Script", cursive;
+    font-family: "Quintessential", cursive;
+    font-weight: 900;
+    background-color: white;
+
+    text-align: center;
+    font-size: 98px;
+    line-height: 14rem;
+  }
+
+  .left {
+    transform: rotate(-30deg);
+  }
+  .right {
+    transform: rotate(16deg);
+  }
+
+  .spacer {
+    height: 5rem;
+    background-color: rgba(250, 234, 127, 0.5);
+  }
+
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    #section-to-print,
+    #section-to-print * {
+      visibility: visible;
+    }
+    #section-to-print {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+</style>
